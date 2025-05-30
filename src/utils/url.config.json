@@ -3,6 +3,7 @@
     "Upcoming": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/upcoming_auctions",
     "Upcoming_Metadata": "https://fiscaldata.treasury.gov/page-data/datasets/upcoming-auctions/page-data.json",
     "Historical": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/od/auctions_query",
-    "Historical_Metadata": "https://fiscaldata.treasury.gov/page-data/datasets/treasury-securities-auctions-data/page-data.json"
+    "Historical_Metadata": "https://fiscaldata.treasury.gov/page-data/datasets/treasury-securities-auctions-data/page-data.json",
+    "Tentitive_Auction_Schedule": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml"
   }
 }
