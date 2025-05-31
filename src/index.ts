@@ -1,6 +1,7 @@
 import express from "express";
 import { writeFile } from "fs/promises";
 import treausryServices from "./services/treasuryServices";
+import fedReserveServices from "./services/fedReserveServices";
 
 const app = express();
 const PORT = 3000;
@@ -14,7 +15,7 @@ app.listen(PORT, () => {
 });
 
 // Test NPM Pakcage
-async function main() {
+async function mainTresury() {
   const response = await treausryServices.getTreasuryDataByDate(
     "2025-05-25",
     "2025-06-03"
@@ -29,4 +30,19 @@ async function main() {
   }
 }
 
-main();
+async function mainFed() {
+  const response = await fedReserveServices.getFedDataByDate(
+    "2025-05-25",
+    "2025-06-03"
+  );
+
+  // write it to local json file for testing
+  try {
+    await writeFile("response.json", JSON.stringify(response), "utf-8");
+    console.log("JSON saved to response.json");
+  } catch (err) {
+    console.error("Error writing file:", err);
+  }
+}
+
+mainFed();

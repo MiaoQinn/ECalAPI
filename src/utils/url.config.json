@@ -6,5 +6,9 @@
     "Historical_Metadata": "https://fiscaldata.treasury.gov/page-data/datasets/treasury-securities-auctions-data/page-data.json",
     "Historical_Source": "https://fiscaldata.treasury.gov/datasets/treasury-securities-auctions-data/treasury-securities-auctions-data",
     "Tentitive_Auction_Schedule": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml"
+  },
+  "Federal_Reserve": {
+    "FedCalendar": "https://www.federalreserve.gov/json/calendar.json",
+    "Federal_Reserve_Source": "https://www.federalreserve.gov/newsevents/calendar.htm"
   }
 }
