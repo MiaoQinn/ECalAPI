@@ -1,0 +1,164 @@
+[
+  {
+    "date": "2025-05-20",
+    "time": "11:30",
+    "title": "4-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-20",
+    "time": "11:30",
+    "title": "8-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-20",
+    "time": "11:30",
+    "title": "17-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "13-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "6-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "26-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-15",
+    "time": "11:30",
+    "title": "9-Year 8-Month Treasury TIPS Note Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "1-Year 11-Month Treasury FRN Note Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-15",
+    "time": "11:30",
+    "title": "20-Year Treasury Bond Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "7-Year Treasury Note Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "5-Year Treasury Note Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-22",
+    "time": "11:30",
+    "title": "2-Year Treasury Note Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-27",
+    "time": "11:30",
+    "title": "8-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-27",
+    "time": "11:30",
+    "title": "4-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-05-27",
+    "time": "11:30",
+    "title": "17-Week Treasury Bill Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-06-03",
+    "time": "11:30",
+    "title": "17-Week Treasury BILL Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-06-03",
+    "time": "11:30",
+    "title": "4-Week Treasury BILL Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  },
+  {
+    "date": "2025-06-03",
+    "time": "11:30",
+    "title": "8-Week Treasury BILL Auction",
+    "category": "Treasury",
+    "source": "TreasuryDirect",
+    "sourceURL": "https://home.treasury.gov/system/files/221/Tentative-Auction-Schedule.xml",
+    "importance": 1
+  }
+]
