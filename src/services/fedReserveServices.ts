@@ -18,12 +18,16 @@ class FedReserveServices {
 
     fedAnnouncement.forEach((element) => {});
 
+    /**
+     *  FedEvents
+     */
     fedEvents.forEach((element) => {
       if (element.days) {
         // same event on multiple dats of a month
         let daysArr: string[] = element.days
           .split(",")
           .map((s: string) => s.trim());
+
         daysArr.forEach((day) => {
           let formattedDate: string =
             element.month + "-" + day.padStart(2, "0");
@@ -46,6 +50,12 @@ class FedReserveServices {
         });
       }
     });
+
+    /**
+     *
+     * FedAnn : Place holder for now.
+     */
+    fedAnnouncement.forEach((element) => {});
 
     return finalRes;
   }
