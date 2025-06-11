@@ -10,5 +10,6 @@
   "Federal_Reserve": {
     "FedCalendar": "https://www.federalreserve.gov/json/calendar.json",
     "Federal_Reserve_Source": "https://www.federalreserve.gov/newsevents/calendar.htm"
-  }
+  },
+  "BLS": {}
 }
