@@ -3,6 +3,8 @@ import urls from "../utils/url.config.json";
 import { parseStringPromise } from "xml2js";
 import { url } from "inspector";
 import CalendarItem from "../models/calendarItem.model";
+import { json } from "stream/consumers";
+import Utils from "../utils/utils";
 
 class TreasuryServices {
   /**
@@ -21,11 +23,16 @@ class TreasuryServices {
     let finalRes: CalendarItem[] = [];
     let totalPageNumber = 2;
 
+    let latest = "1990-01-01";
+
+    /**
+     * Stored Schdule
+     */
     while (pageNumber <= totalPageNumber) {
       const params = {
         "page[number]": pageNumber,
         "page[size]": pageSize,
-        filter: `record_date:gte:${start},record_date:lte:${end}`,
+        filter: `auction_date:gte:${start},auction_date:lte:${end}`,
       };
 
       try {
@@ -33,11 +40,14 @@ class TreasuryServices {
           params,
         });
         totalPageNumber = response.data.meta["total-pages"];
-        // change this
         response.data.data.forEach((element: any) => {
+          latest =
+            element.auction_date > latest ? element.auction_date : latest;
+
+          // Create calendar item
           let past_calendarItem = new CalendarItem({
-            date: element.announcemt_date,
-            time: "11:30",
+            date: element.auction_date,
+            time: "11:30 AM",
             title:
               element.security_term +
               " Treasury " +
@@ -57,47 +67,48 @@ class TreasuryServices {
       }
     }
 
-    // Fetch future auctions from Tentative Schdule
-    const todayDate = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    if (end > todayDate) {
-      try {
-        // axios takes forever to run, do not use it here for XML format data.
-        const response = await fetch(urls.Treasury.Tentitive_Auction_Schedule);
-        const xmlData = await response.text();
+    console.debug("lates date:" + latest.toString());
 
-        const jsonData = await parseStringPromise(xmlData, {
-          explicitArray: false,
-          mergeAttrs: true,
-        });
+    /**
+     * Future Tentative Schdule
+     */
+    try {
+      // axios takes forever to run, do not use it here for XML format data.
+      const response = await fetch(urls.Treasury.Tentitive_Auction_Schedule);
+      const xmlData = await response.text();
 
-        jsonData.AuctionCalendar.AuctionCalendarDate.forEach((element: any) => {
-          if (
-            element.AnnouncementDate <= end &&
-            element.AnnouncementDate > todayDate
-          ) {
-            let calendarItem = new CalendarItem({
-              date: element.AnnouncementDate,
-              time: "11:30",
-              title:
-                element.SecurityTermWeekYear +
-                " Treasury " +
-                element.SecurityType +
-                " Auction",
-              category: "Treasury",
-              source: "TreasuryDirect",
-              sourceURL: urls.Treasury.Tentitive_Auction_Schedule,
-              importance: 1,
-            });
-            finalRes.push(calendarItem);
-          }
-        });
-      } catch (err) {
-        console.error(
-          "Error getting tentative schdule for Treasury Data!",
-          err
-        );
-      }
+      const jsonData = await parseStringPromise(xmlData, {
+        explicitArray: false,
+        mergeAttrs: true,
+      });
+
+      jsonData.AuctionCalendar.AuctionCalendarDate.forEach((element: any) => {
+        if (
+          element.AuctionDate <= end &&
+          (latest === "1990-01-01"
+            ? element.AuctionDate >= start
+            : element.AuctionDate > latest)
+        ) {
+          let calendarItem = new CalendarItem({
+            date: element.AuctionDate,
+            time: "11:30",
+            title:
+              element.SecurityTermWeekYear +
+              " Treasury " +
+              element.SecurityType +
+              " Auction",
+            category: "Treasury",
+            source: "TreasuryDirect",
+            sourceURL: urls.Treasury.Tentitive_Auction_Schedule,
+            importance: 1,
+          });
+          finalRes.push(calendarItem);
+        }
+      });
+    } catch (err) {
+      console.error("Error getting tentative schdule for Treasury Data!", err);
     }
+
     return finalRes;
   }
 }

@@ -17,11 +17,11 @@ app.listen(PORT, () => {
 // Test NPM Pakcage
 async function mainTresury() {
   const response = await treausryServices.getTreasuryDataByDate(
-    "2025-05-25",
-    "2025-06-03"
+    "2025-06-17",
+    "2025-06-17"
   );
 
-  // write it to local json file for testing
+  // write it to local json file for
   try {
     await writeFile("response.json", JSON.stringify(response), "utf-8");
     console.log("JSON saved to response.json");
@@ -45,4 +45,4 @@ async function mainFed() {
   }
 }
 
-mainFed();
+mainTresury();
