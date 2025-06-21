@@ -2,6 +2,8 @@ import express from "express";
 import { writeFile } from "fs/promises";
 import treausryServices from "./services/treasuryServices";
 import fedReserveServices from "./services/fedReserveServices";
+import BLSServices from "./services/blsServices";
+import BLSServices_New from "./services/blsServices_new";
 
 const app = express();
 const PORT = 3000;
@@ -33,7 +35,7 @@ async function mainTresury() {
 async function mainFed() {
   const response = await fedReserveServices.getFedDataByDate(
     "2025-05-25",
-    "2025-06-03"
+    "2025-06-20"
   );
 
   // write it to local json file for testing
@@ -45,4 +47,14 @@ async function mainFed() {
   }
 }
 
-mainTresury();
+async function mainBLS() {
+  try {
+    const response = await BLSServices_New.scrapeBls2024Calendar();
+    await writeFile("response.json", JSON.stringify(response), "utf-8");
+    console.log("JSON saved to response.json");
+  } catch (err) {
+    console.error("Error writing file:", err);
+  }
+}
+
+mainBLS();

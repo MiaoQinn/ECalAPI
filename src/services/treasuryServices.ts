@@ -1,10 +1,8 @@
 import axios from "axios";
 import urls from "../utils/url.config.json";
 import { parseStringPromise } from "xml2js";
-import { url } from "inspector";
+
 import CalendarItem from "../models/calendarItem.model";
-import { json } from "stream/consumers";
-import Utils from "../utils/utils";
 
 class TreasuryServices {
   /**

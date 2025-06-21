@@ -1,12 +1,16 @@
 class Utils {
   constructor() {}
 
-  public static parseDateString(input: string): Date | null {
+  /**
+   *
+   * @param input
+   * @returns Transform the input to ISO format yyyy-mm-dd
+   */
+  public static parseDateString(input: string): string {
     // Try ISO format: yyyy-MM-dd
     const isoFormat = /^\d{4}-\d{2}-\d{2}$/;
     if (isoFormat.test(input)) {
-      const date = new Date(input);
-      return isNaN(date.getTime()) ? null : date;
+      return input;
     }
 
     // Try US format: MM/dd/yyyy
