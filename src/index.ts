@@ -2,8 +2,7 @@ import express from "express";
 import { writeFile } from "fs/promises";
 import treausryServices from "./services/treasuryServices";
 import fedReserveServices from "./services/fedReserveServices";
-import BLSServices from "./services/blsServices";
-import BLSServices_New from "./services/blsServices_new";
+import BLSServices from "./services/blsServices_new";
 
 const app = express();
 const PORT = 3000;
@@ -49,7 +48,10 @@ async function mainFed() {
 
 async function mainBLS() {
   try {
-    const response = await BLSServices_New.scrapeBls2024Calendar();
+    const response = await BLSServices.getBLSDataByDate(
+      "2025-06-01",
+      "2025-06-30"
+    );
     await writeFile("response.json", JSON.stringify(response), "utf-8");
     console.log("JSON saved to response.json");
   } catch (err) {
